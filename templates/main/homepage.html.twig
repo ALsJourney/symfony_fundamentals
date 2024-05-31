@@ -2,30 +2,16 @@
 
 {% block title %}{{ parent() }} Starshop {% endblock %}
 {% block body %}
-<strong>Starshop</strong>
-<div>
-    Browse through {{ ships|length }} starships!
-</div>
-
-<div>
-     {% if ships|length > 2 %}
-
-        <div>
-            {# Comments here #}
-            dayum
-        </div>
-
-        <div>
-            {# Twig automatically finds getters! #}
-            {{ myShip.name }}
-            {{ myShip.class}}
-            {{ myShip.captain}}
-            {{ myShip.status}}
-        </div>
-        <div>
-
-        </div>
-
-{% endif %}
-</div>
+    <div>
+        <table>
+            <tr>
+                <th>Name</th>
+                <td>
+                    <a href="{{ path('app_starship_show', {
+                        id: myShip.id
+                    }) }}">{{ myShip.name }}</a>
+                </td>
+            </tr>
+        </table>
+    </div>
 {% endblock %}
