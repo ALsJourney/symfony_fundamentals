@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} Starshop {% endblock %}
+{% block body %}
+<strong>Starshop</strong>
+<div>
+    Browse through {{ numberOfStarships }} starships!
+</div>
+
+<div>
+    {% if numberOfStarships > 400 %}
+
+        <div>
+            {# Comments here #}
+            dayum
+        </div>
+
+        <div>
+            {{ myShip.henlo }}
+        </div>
+        <div>
+            {{ myShip.Testing|upper}}
+        </div>
+
+    {% endif %}
+</div>
+{% endblock %}
