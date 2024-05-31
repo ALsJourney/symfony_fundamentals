@@ -4,11 +4,11 @@
 {% block body %}
 <strong>Starshop</strong>
 <div>
-    Browse through {{ numberOfStarships }} starships!
+    Browse through {{ ships|length }} starships!
 </div>
 
 <div>
-    {% if numberOfStarships > 400 %}
+     {% if ships|length > 2 %}
 
         <div>
             {# Comments here #}
@@ -16,12 +16,16 @@
         </div>
 
         <div>
-            {{ myShip.henlo }}
+            {# Twig automatically finds getters! #}
+            {{ myShip.name }}
+            {{ myShip.class}}
+            {{ myShip.captain}}
+            {{ myShip.status}}
         </div>
         <div>
-            {{ myShip.Testing|upper}}
+
         </div>
 
-    {% endif %}
+{% endif %}
 </div>
 {% endblock %}
