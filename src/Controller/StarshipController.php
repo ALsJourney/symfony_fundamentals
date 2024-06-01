@@ -12,11 +12,9 @@ class StarshipController extends AbstractController
     #[Route('/starships/{id<\d+>}', name: 'app_starship_show')]
     public function show(int $id, StarShipRepository $repository): Response
     {
-
         $starship = $repository->find($id);
 
-        if (!$starship)
-        {
+        if (!$starship) {
             throw $this->createNotFoundException('Starship not found!');
         }
 
@@ -25,7 +23,5 @@ class StarshipController extends AbstractController
                 'ship' => $starship,
             ]
         );
-
     }
-
 }
